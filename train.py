@@ -79,8 +79,6 @@ def get_program_argparse() -> argparse.ArgumentParser:
                         help="The mode to decide the if use pure xcnn to caculate edensityxc")
     parser.add_argument("--warning_display", action="store_const", default=True, const=True,
                         help="If display warning message in the training epochs")
-
-    # 即使迭代不收敛，也始终传播梯度
     parser.add_argument("--always_attach", action="store_const", default=False, const=True,
                         help="Always propagate gradient even if the iteration does not converge")
     # -----------------------------------------------------------------------------------------------
