@@ -14,9 +14,9 @@ from dqc.utils.datastruct import SpinParam
 from dqc.system.mol import Mol
 from dqc.system.base_system import BaseSystem
 from dqc.grid.base_grid import BaseGrid
-from fxcnn.kscalc import BaseKSCalc
-from fxcnn.xcmodels import BaseNNXC
-from fxcnn.utils import eval_and_save
+from kscalc import BaseKSCalc
+from xcmodels import BaseNNXC
+from utils import eval_and_save
 
 filedir = os.path.dirname(os.path.realpath(__file__))
 

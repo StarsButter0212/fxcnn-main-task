@@ -5,9 +5,9 @@ from typing import List, Dict, Optional, Union
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-from fxcnn.fxcmodule import FXCNN
-from fxcnn.dataset import DFTDataset
-from fxcnn.train import get_program_argparse, get_datasets
+from fxcmodule import FXCNN
+from dataset import DFTDataset
+from train import get_program_argparse, get_datasets
 
 class Plotter(object):
     # this object provides interface to plot the losses

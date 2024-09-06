@@ -5,15 +5,15 @@ import argparse
 import warnings
 from typing import Dict, List, Union, Tuple
 from dqc.api.getxc import get_xc
-from fxcnn.xcmodels import HybridXC
-from fxcnn.evaluator import XCDNNEvaluator, PySCFEvaluator
+from xcmodels import HybridXC
+from evaluator import XCDNNEvaluator, PySCFEvaluator
 
 
 from tqdm import tqdm
 from datetime import datetime
-from fxcnn.utils import accuracy, AverageMeter
-from fxcnn.user_model import Shared_Bottom, MixtureOfExperts
-from fxcnn.entry import Entry, System
+from utils import accuracy, AverageMeter
+from user_model import Shared_Bottom, MixtureOfExperts
+from entry import Entry, System
 
 
 ###################### training module ######################

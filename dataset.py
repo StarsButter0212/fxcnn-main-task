@@ -3,7 +3,7 @@ from typing import Optional, Callable, Dict, List
 import yaml
 import torch
 from torch.utils.data import Dataset
-from fxcnn.entry import Entry
+from entry import Entry
 
 filedir = os.path.dirname(os.path.realpath(__file__))
 

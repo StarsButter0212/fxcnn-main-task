@@ -11,10 +11,10 @@ from dqc.system.mol import Mol
 from dqc.qccalc.ks import KS
 from dqc.utils.datastruct import ValGrad, SpinParam
 from pyscf import dft, scf, cc
-from fxcnn.utils import hashstr
-from fxcnn.entry import Entry, System
-from fxcnn.xcmodels import BaseNNXC, PureXC
-from fxcnn.kscalc import BaseKSCalc, DQCKSCalc, PySCFKSCalc
+from utils import hashstr
+from entry import Entry, System
+from xcmodels import BaseNNXC, PureXC
+from kscalc import BaseKSCalc, DQCKSCalc, PySCFKSCalc
 from typing import Dict, Union, List, Optional, Callable, Tuple
 
 class BaseEvaluator(torch.nn.Module):

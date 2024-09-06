@@ -19,14 +19,11 @@ from torch.utils.data import DataLoader, Subset
 
 sys.path.append(os.path.split(os.path.dirname(os.path.abspath(__file__)))[0])
 
-import fxcnn
-from fxcnn.dataset import DFTDataset
-from fxcnn.fxcmodule import FXCNN
-from fxcnn.user_model import Trainer, Tester
-from fxcnn.utils import get_exp_version
+from dataset import DFTDataset
+from fxcmodule import FXCNN
+from user_model import Trainer, Tester
+from utils import get_exp_version
 from ray.tune.search.hyperopt import HyperOptSearch
-
-FILEPATH = os.path.dirname(os.path.realpath(fxcnn.__file__))
 
 
 import warnings
@@ -131,7 +128,7 @@ def lambda_xs(xs):
 def get_datasets(hparams: Dict):
     dloader_train, dloader_val = {}, {}
 
-    from fxcnn.utils import subs_present, get_atoms
+    from utils import subs_present, get_atoms
     batch_size = hparams["batch_size"]
     num_workers = hparams["num_workers"]
     pin_memory = hparams["pin_memory"]
@@ -151,7 +148,8 @@ def get_datasets(hparams: Dict):
     all_idxs = dset.get_indices(general_filter)
     print('# of dataset samples: ', len(all_idxs))
 
-    val_filter = lambda obj: subs_present(val_atoms, get_atoms(obj["name"].split()[-1])) and general_filter(obj)
+    val_filter = lambda obj: (subs_present(val_atoms, get_atoms(obj["name"].split()[-1]))
+                              and general_filter(obj))
     val_idxs = dset.get_indices(val_filter)
     train_idxs = list(set(all_idxs) - set(val_idxs))
 

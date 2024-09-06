@@ -10,7 +10,7 @@ import random
 import numpy as np
 from tqdm import tqdm
 from datetime import datetime
-from fxcnn.min_norm_solvers import MinNormSolver, gradient_normalizers
+from min_norm_solvers import MinNormSolver, gradient_normalizers
 
 # --------------------------------- Shared-Bottom -----------------------------------------
 class BottomNet(nn.Module):

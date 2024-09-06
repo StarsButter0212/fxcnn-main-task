@@ -16,11 +16,10 @@ from typing import Dict, Optional, List, Union, Tuple
 
 sys.path.append(os.path.split(os.path.dirname(os.path.abspath(__file__)))[0])
 
-import fxcnn
-from fxcnn.dataset import DFTDataset
-from fxcnn.fxcmodule import FXCNN
-from fxcnn.utils import hashstr
-from fxcnn.entry import Entry, System
+from dataset import DFTDataset
+from fxcmodule import FXCNN
+from utils import hashstr
+from entry import Entry, System
 from dqc.utils.datastruct import SpinParam
 
 class XCDNNEvaluator(torch.nn.Module):
